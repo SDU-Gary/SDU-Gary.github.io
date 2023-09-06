@@ -1,0 +1,152 @@
+.contents{
+    width: 100%;
+    height: 40vh;
+    margin: 0 auto;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(19, 21, 24);
+}
+
+.parallax {
+    width:100%;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    cursor: pointer;
+    
+    
+}
+
+.container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.h1 {
+    font-size: 70px;
+    font-weight: 700;
+    color: antiquewhite;
+    letter-spacing: 50px;
+    text-align: center;
+    
+}
+
+.anima{
+    
+    animation: identifier 1.5s ease 1s;
+    animation-fill-mode: forwards;
+    
+}
+
+.parallax {
+/* 其他样式 */
+overflow: hidden;
+position: relative;
+}
+
+.parallax .background {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: top center;
+background-attachment: fixed;
+}
+
+
+.container {
+    position: relative; /* 设置容器为相对定位 */
+    /* 其他样式 */
+}
+
+.painterLeft {
+    position: absolute; /* 设置painterLeft为绝对定位 */
+    top: 50%; /* 将painterLeft的顶部设置在容器的中间 */
+    left: 0; /* 将painterLeft的左边设置在容器的左边 */
+    transform: translateY(-50%);
+    left: -50%;  /* 使用transform将painterLeft向上移动自身高度的一半，使其垂直居中 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('painterLeft.png');
+}
+
+.painterRight {
+    position: absolute; /* 设置painterRight为绝对定位 */
+    top: 50%; /* 将painterRight的顶部设置在容器的中间 */
+    right: 0; /* 将painterRight的右边设置在容器的右边 */
+    transform: translateY(-50%);
+    right: -50%; /* 使用transform将painterRight向上移动自身高度的一半，使其垂直居中 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('painterRight.png');
+}
+
+.picture{
+    position: absolute; 
+    height: 100%; /* 设置painterLeft和painterRight的高度为100%，即与容器的高度相同 */
+    width: 60%;
+    top: 100%; /* 将顶部定位在父容器底部 */
+    left: 50%; /* 将左侧定位在父容器中心 */
+    transform: translateX(-50%);/* 水平居中 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('picture.png');
+
+}
+
+.painterLeft, .painterRight {
+    /* 其他样式 */
+    height: 100%; /* 设置painterLeft和painterRight的高度为100%，即与容器的高度相同 */
+    width: 50%; /* 设置painterLeft和painterRight的宽度为33.33%，即容器宽度的三分之一 */
+}
+
+.timeLine{
+    position: absolute;
+    top: 50%; /* 将顶部定位在父容器中间 */
+    left: 50%; /* 将左侧定位在父容器中间 */
+    transform: translate(-50%, -50%); 
+    height: 70%;
+    width: 200%;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: -1;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 其他样式 */
+}
+
+.p1 .background {background-image: url('picture_back.png')}
+.p2 .background {background-image: url('https://dubaiastronomy.com/wp-content/uploads/2019/02/Venus-Horizon.jpg')}
+.p3 .background {background-image: url('https://mp1st.com/wp-content/uploads/2021/07/Forza-Horizon-5-10.jpg')}

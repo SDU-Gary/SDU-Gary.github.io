@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./FirstPage/Vision.css">
+
+    <title>HORIZON-FirstPage</title>
+</head>
+<body>
+    <div class = "content">
+        <a href="./photo-wall-master/photo-wall-master/index.html" >      
+            <div class = "contents"></div>
+            <div class = "parallax p1" >
+                <div class="background"></div>
+                <div class = "picture"></div>
+                <div class = "container">
+                    <span class = "h1">HORIZON
+                        <br>
+                        摄影
+                    </span>
+                </div>
+                
+            </div>
+        </a> 
+        <div class = "contents"></div>
+        <div class = "parallax p2">
+            <div class="background"></div>
+            <div class = "painterLeft"></div>
+            <div class = "painterRight"></div>
+            <div class = "container">
+                <span class = "h1">HORIZON
+                    <br>
+                    手绘
+                </span>
+            </div>
+        </div>
+        <div class = "contents"></div>
+        <div class = "parallax p3">
+            <video id = "video" muted autoplay="autoplay" loop="loop" >
+                    <source src="./FirstPage/timeLine.mp4"  type="video/mp4"></source>
+            </video>
+            <div class = "timeLine"></div>
+            <div class = "container">
+                <span class = "h1">HORIZON
+                    <br>
+                    视频
+                </span>
+            </div>
+        </div>
+        <div class = "contents"></div>
+        <div class = "photoPage"></div>
+    </div>
+    <script>
+        
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.scrollY;
+            var windowHeight = window.innerHeight;
+            var elements = document.querySelectorAll('.painterLeft'); // 你的三角形元素
+            elements.forEach(function(element) {
+                var elementTop = window.innerHeight - element.getBoundingClientRect().top;
+                var elementBottom = element.getBoundingClientRect().bottom;
+                var elementCenter = (element.getBoundingClientRect().top + element.getBoundingClientRect().bottom) / 2;
+                var windowCenter = window.innerHeight / 2; // 屏幕中心位置
+                var distanceToCenter = Math.abs(elementCenter - windowCenter); // 元素中心到屏幕中心的绝对距离
+                var progress = (1 - (distanceToCenter / windowHeight));
+                if (elementBottom > 0 && elementTop > 0){
+                    var position = (progress * 100)-100; // 你的三角形最大位置
+                    element.style.left = position + '%';
+                } else {
+                    // 元素完全不在屏幕中
+                    element.style.left = '0%';
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.scrollY;
+            var windowHeight = window.innerHeight;
+            var elements = document.querySelectorAll('.painterRight'); // 你的三角形元素
+            elements.forEach(function(element) {
+                var elementTop = window.innerHeight - element.getBoundingClientRect().top;
+                var elementBottom = element.getBoundingClientRect().bottom;
+                var elementCenter = (element.getBoundingClientRect().top + element.getBoundingClientRect().bottom) / 2;
+                var windowCenter = window.innerHeight / 2; // 屏幕中心位置
+                var distanceToCenter = Math.abs(elementCenter - windowCenter); // 元素中心到屏幕中心的绝对距离
+                var progress = (1 - (distanceToCenter / windowHeight));
+                if (elementBottom > 0 && elementTop > 0){
+                    var position = (progress * 100)-100; // 你的三角形最大位置
+                    element.style.right = position + '%';
+                } else {
+                    // 元素完全不在屏幕中
+                    element.style.right = '0%';
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.scrollY;
+            var windowHeight = window.innerHeight;
+            var elements = document.querySelectorAll('.picture'); // 你的三角形元素
+            var element1 = document.querySelector('.background');
+            elements.forEach(function(element) {
+                var elementTop = window.innerHeight - element1.getBoundingClientRect().top;
+                var elementBottom = element1.getBoundingClientRect().bottom;
+                var elementCenter = (element1.getBoundingClientRect().top + element1.getBoundingClientRect().bottom) / 2;
+                var windowCenter = window.innerHeight / 2; // 屏幕中心位置
+                var distanceToCenter = Math.abs(elementCenter - windowCenter); // 元素中心到屏幕中心的绝对距离
+                var progress = ((distanceToCenter / windowHeight));
+                if (elementBottom > 0 && elementTop > 0){
+                    var position = (progress * 100)+20; // 你的三角形最大位置
+                    element.style.top = position + '%';
+                } else {
+                    // 元素完全不在屏幕中
+                    element.style.top = '0%';
+                }
+            });
+        });
+
+      function videoPlayback(){
+             //获取视频标签
+             var video = document.getElementById('video'); 
+             //给视频标签添加缓存播放---video标签属性。
+             video.setAttribute("autoplay","autoplay");
+             //给视频标签添加循环播放---video标签属性。
+             video.setAttribute("loop","loop");
+             //播放视频
+             video.play();
+         };
+         
+         //鼠标离开
+         function videoStopped(){
+             //获取视频标签
+             var oDiv = document.getElementById('video');
+             //停止播放
+             video.pause();
+         }
+  
+    </script>
+
+    
+</body>
+</html>

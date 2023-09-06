@@ -1,0 +1,11 @@
+{
+  "name": "horizon-for-u",
+  "version": "1.0.0",
+  "description": "build for SDU-horizon",
+  "main": "firstPage.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
